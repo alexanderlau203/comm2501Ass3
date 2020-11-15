@@ -1,47 +1,47 @@
-﻿Lat,Long,State
-32.318231,-86.902298,Alabama
-63.588753,-154.493062,Alaska
-34.048928,-111.093731,Arizona
-35.20105,-91.831833,Arkansas
-36.778261,-119.417932,California
-39.550051,-105.782067,Colorado
-41.603221,-73.087749,Connecticut
-38.910832,-75.52767,Delaware
-38.905985,-77.033418,District of Columbia
-27.664827,-81.515754,Florida
-32.157435,-82.907123,Georgia
-19.898682,-155.665857,Hawaii
-44.068202,-114.742041,Idaho
-40.633125,-89.398528,Illinois
-40.551217,-85.602364,Indiana
-41.878003,-93.097702,Iowa
-39.011902,-98.484246,Kansas
-37.839333,-84.270018,Kentucky
-31.244823,-92.145024,Louisiana
-45.253783,-69.445469,Maine
-39.045755,-76.641271,Maryland
-42.407211,-71.382437,Massachusetts
-44.314844,-85.602364,Michigan
-46.729553,-94.6859,Minnesota
-37.964253,-91.831833,Missouri
-38.80261,-116.419389,Nevada
-43.193852,-71.572395,New Hampshire
-40.058324,-74.405661,New Jersey
-34.97273,-105.032363,New Mexico
-43.299428,-74.217933,New York
-35.759573,-79.0193,North Carolina
-47.551493,-101.002012,North Dakota
-40.417287,-82.907123,Ohio
-35.007752,-97.092877,Oklahoma
-43.804133,-120.554201,Oregon
-41.203322,-77.194525,Pennsylvania
-41.580095,-71.477429,Rhode Island
-33.836081,-81.163725,South Carolina
-43.969515,-99.901813,South Dakota
-35.517491,-86.580447,Tennessee
-31.968599,-99.901813,Texas
-39.32098,-111.093731,Utah
-37.431573,-78.656894,Virginia
-47.751074,-120.740139,Washington
-43.78444,-88.787868,Wisconsin
-43.075968,-107.290284,Wyoming
+﻿Lat,Long,State,,,,,,,,
+32.318231,-86.902298,Alabama,Alabama,,,,,,,
+63.588753,-154.493062,Alaska,Alaska,,,,,,,
+34.048928,-111.093731,Arizona,Arizona,,,,,,,
+35.20105,-91.831833,Arkansas,Arkansas,,,,,,,
+36.778261,-119.417932,California,California,,,,,,,
+39.550051,-105.782067,Colorado,Colorado,,,,,,,
+41.603221,-73.087749,Connecticut,Connecticut,,,,,,,
+38.910832,-75.52767,Delaware,Delaware,,,,,,,
+38.905985,-77.033418,District of Columbia,District of Columbia,,,,,,,
+27.664827,-81.515754,Florida,Florida,,,,,,,
+32.157435,-82.907123,Georgia,Georgia,,,,,,,
+19.898682,-155.665857,Hawaii,Hawaii,,,,,,,
+44.068202,-114.742041,Idaho,Idaho,,,,,,,
+40.633125,-89.398528,Illinois,Illinois,,,,,,,
+40.551217,-85.602364,Indiana,Indiana,,,,,,,
+41.878003,-93.097702,Iowa,Iowa,,,,,,,
+39.011902,-98.484246,Kansas,Kansas,,,,,,,
+37.839333,-84.270018,Kentucky,Kentucky,,,,,,,
+31.244823,-92.145024,Louisiana,Louisiana,,,,,,,
+45.253783,-69.445469,Maine,Maine,,,,,,,
+39.045755,-76.641271,Maryland,Maryland,,,,,,,
+42.407211,-71.382437,Massachusetts,Massachusetts,,,,,,,
+44.314844,-85.602364,Michigan,Michigan,,,,,,,
+46.729553,-94.6859,Minnesota,Minnesota,,,,,,,
+37.964253,-91.831833,Missouri,Missouri,,,,,,,
+38.80261,-116.419389,Nevada,Nevada,,,,,,,Mississippi
+43.193852,-71.572395,New Hampshire,New Hampshire,,,,,,,Montana
+40.058324,-74.405661,New Jersey,New Jersey,,,,,,,Nebraska
+34.97273,-105.032363,New Mexico,New Mexico,,,,,,,Puerto Rico
+43.299428,-74.217933,New York,New York,,,,,,,Vermont
+35.759573,-79.0193,North Carolina,North Carolina,,,,,,,West Virginia
+47.551493,-101.002012,North Dakota,North Dakota,,,,,,,
+40.417287,-82.907123,Ohio,Ohio,,,,,,,
+35.007752,-97.092877,Oklahoma,Oklahoma,,,,,,,
+43.804133,-120.554201,Oregon,Oregon,,,,,,,
+41.203322,-77.194525,Pennsylvania,Pennsylvania,,,,,,,
+41.580095,-71.477429,Rhode Island,Rhode Island,,,,,,,
+33.836081,-81.163725,South Carolina,South Carolina,,,,,,,
+43.969515,-99.901813,South Dakota,South Dakota,,,,,,,
+35.517491,-86.580447,Tennessee,Tennessee,,,,,,,
+31.968599,-99.901813,Texas,Texas,,,,,,,
+39.32098,-111.093731,Utah,Utah,,,,,,,
+37.431573,-78.656894,Virginia,Virginia,,,,,,,
+47.751074,-120.740139,Washington,Washington,,,,,,,
+43.78444,-88.787868,Wisconsin,Wisconsin,,,,,,,
+43.075968,-107.290284,Wyoming,Wyoming,,,,,,,

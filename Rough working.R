@@ -1,3 +1,5 @@
+#https://www.epa.gov/clean-air-act-overview/air-pollution-current-and-future-challenges
+
 library(tidyverse)
 library(readr)
 
@@ -16,7 +18,7 @@ mean_data = raw_data %>%
 # Country data
 sep_mean_data = mean_data %>%
   separate(col='Date.Local', into=c('year', 'month', 'day'), sep='-')
-mean_data$year_month = paste(mean_data$year, mean_data$month, sep='-')
+sep_mean_data$year_month = paste(sep_mean_data$year, sep_mean_data$month, sep='-')
 
 country_data = sep_mean_data %>%
   filter(year != 2016) %>%
@@ -75,7 +77,7 @@ recent_data = merge(recent_data, lat_long, by='State')
 
 library(RColorBrewer)
 pal <- colorNumeric(
-  palette = "YlGn",
+  palette = "Green",
   domain = recent_data$no3)
 
 library("leaflet")
@@ -92,7 +94,7 @@ recent_data %>%
 # VISUALISATION 3 - SO2 by state (2015)
 library(RColorBrewer)
 pal <- colorNumeric(
-  palette = "PuRd",
+  palette = "Purple",
   domain = c(-4, 7))
 
 library("leaflet")
@@ -109,7 +111,7 @@ recent_data %>%
 # VISUALISATION 4 - O3 by state (2015)
 library(RColorBrewer)
 pal <- colorNumeric(
-  palette = "YlGnBu",
+  palette = "Blue",
   domain = recent_data$o3)
 
 library("leaflet")
@@ -126,7 +128,7 @@ recent_data %>%
 # VISUALISATION 5 - CO by state (2015)
 library(RColorBrewer)
 pal <- colorNumeric(
-  palette = "YlOrRd",
+  palette = "Red",
   domain = c(recent_data$co))
 
 library("leaflet")
@@ -153,14 +155,9 @@ states = states(cb=T) %>%
 
 merged_states <- geo_join(states, recent_data, "NAME", "State")
 
-palette = colorNumeric(
+pal = colorNumeric(
   palette = "YlOrRd",
   domain = recent_data$no2_aqi)
-
-merged_states %>% 
-  leaflet() %>% 
-  addTiles() %>% 
-  addPolygons(popup=~NAME)
 
 
 leaflet() %>%
@@ -172,16 +169,35 @@ leaflet() %>%
               weight = 0.2, 
               smoothFactor = 0.2, 
               label = State,
-              popup = ~paste('NO2 AQI is', round(no2_aqi, 4))) %>%
-  addLegend(pal = palette, 
-            values = merged_states$no2_aqi, 
-            position = "bottomright", 
-            title = "NO2 AQI")
+              popup = ~paste('NO2 AQI is', round(no2_aqi, 4))) #%>%
+  #addLegend(pal = pal, 
+  #          values = merged_states$no2_aqi, 
+  #          position = "bottomright", 
+  #          title = "NO2 AQI")
 
 
 
 
-recent_data %>%
-  leaflet() %>%
-  addTiles() %>%
-  addPolygons(color = ~palette(`recent_data$no2_aqi`))
+# VISUALISATION 7 - NO2 by bar
+ggplot(data=recent_data)+
+  geom_bar(aes(y=no2, x=reorder(State, -no2), fill=-no2_aqi), stat='identity')+
+  theme(axis.text.x = element_text(angle = 90))+
+  ggtitle('NO2 by US State in 2016')+ 
+  labs(y='NO2 (Parts per billion)', x='State', color='NO2 AQI')+
+  scale_fill_gradient(low="darkgreen", high="palegreen1")
+
+#VISUALISATION 8 - Pollutant by Industry
+library(plotly)
+by_industry = read.csv('/Users/Alex/Documents/GitHub/comm2501Ass3/NO2 By Industry.csv')
+
+# create a dataset
+Year <- by_industry$Year
+Source <- by_industry$Source
+NO2 <- by_industry$no2
+data <- data.frame(Year,Source,NO2)
+
+# Grouped
+plot = ggplot(data, aes(fill=Source, y=NO2, x=Year)) + 
+  geom_bar(position="stack", stat="identity")+
+  theme_bw()
+ggplotly(plot)
