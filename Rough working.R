@@ -131,7 +131,7 @@ pal <- colorNumeric(
   palette = "Red",
   domain = c(recent_data$co))
 
-library("leaflet")
+library(leaflet)
 recent_data %>%
   leaflet() %>%
   addTiles() %>%
