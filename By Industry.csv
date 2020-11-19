@@ -1,0 +1,239 @@
+﻿Year,Source,no2,co,so2
+2000,Fuel & Combined Electrical Utility,5330,484,11396
+2001,Fuel & Combined Electrical Utility,4917,485,10850
+2002,Fuel & Combined Electrical Utility,4709,657,10436
+2003,Fuel & Combined Electrical Utility,4340,653,10343
+2004,Fuel & Combined Electrical Utility,3969,648,10250
+2005,Fuel & Combined Electrical Utility,3792,643,10404
+2006,Fuel & Combined Electrical Utility,3588,673,9546
+2007,Fuel & Combined Electrical Utility,3383,703,8687
+2008,Fuel & Combined Electrical Utility,3144,728,7792
+2009,Fuel & Combined Electrical Utility,2818,747,6762
+2010,Fuel & Combined Electrical Utility,2458,766,5696
+2011,Fuel & Combined Electrical Utility,2090,784,4625
+2012,Fuel & Combined Electrical Utility,1965,762,4624
+2013,Fuel & Combined Electrical Utility,1839,739,4622
+2014,Fuel & Combined Electrical Utility,1714,717,3224
+2015,Fuel & Combined Electrical Utility,1459,717,2250
+2016,Fuel & Combined Electrical Utility,1053,717,1185
+2000,Fuel & Combined Industrial,2723,1219,2139
+2001,Fuel & Combined Industrial,2757,1253,2243
+2002,Fuel & Combined Industrial,2041,1267,1786
+2003,Fuel & Combined Industrial,1971,1231,1780
+2004,Fuel & Combined Industrial,1897,1192,1763
+2005,Fuel & Combined Industrial,1820,1152,1735
+2006,Fuel & Combined Industrial,1681,1067,1514
+2007,Fuel & Combined Industrial,1543,983,1293
+2008,Fuel & Combined Industrial,1399,898,1069
+2009,Fuel & Combined Industrial,1352,919,938
+2010,Fuel & Combined Industrial,1305,940,807
+2011,Fuel & Combined Industrial,1258,961,676
+2012,Fuel & Combined Industrial,1235,960,676
+2013,Fuel & Combined Industrial,1212,958,676
+2014,Fuel & Combined Industrial,1189,957,657
+2015,Fuel & Combined Industrial,1189,957,657
+2016,Fuel & Combined Industrial,1189,957,657
+2000,Fuel & Combined Other,766,3081,628
+2001,Fuel & Combined Other,779,3088,642
+2002,Fuel & Combined Other,738,3550,579
+2003,Fuel & Combined Other,736,3478,581
+2004,Fuel & Combined Other,734,3405,582
+2005,Fuel & Combined Other,730,3331,582
+2006,Fuel & Combined Other,682,3137,485
+2007,Fuel & Combined Other,633,2943,388
+2008,Fuel & Combined Other,585,2749,291
+2009,Fuel & Combined Other,575,2783,267
+2010,Fuel & Combined Other,565,2818,243
+2011,Fuel & Combined Other,555,2852,219
+2012,Fuel & Combined Other,548,2719,219
+2013,Fuel & Combined Other,541,2585,219
+2014,Fuel & Combined Other,534,2452,131
+2015,Fuel & Combined Other,534,2452,131
+2016,Fuel & Combined Other,534,2452,131
+2000,Chemical,105,361,338
+2001,Chemical,107,372,342
+2002,Chemical,70,284,259
+2003,Chemical,67,259,257
+2004,Chemical,64,233,254
+2005,Chemical,61,208,251
+2006,Chemical,59,200,229
+2007,Chemical,57,191,207
+2008,Chemical,55,183,185
+2009,Chemical,54,178,165
+2010,Chemical,53,173,146
+2011,Chemical,51,167,127
+2012,Chemical,50,154,126
+2013,Chemical,48,142,126
+2014,Chemical,47,129,115
+2015,Chemical,47,129,115
+2016,Chemical,47,129,115
+2000,Metals Processing,89,1295,313
+2001,Metals Processing,94,1380,332
+2002,Metals Processing,69,987,213
+2003,Metals Processing,68,934,200
+2004,Metals Processing,67,882,187
+2005,Metals Processing,66,829,175
+2006,Metals Processing,71,833,175
+2007,Metals Processing,75,836,176
+2008,Metals Processing,79,840,177
+2009,Metals Processing,76,815,166
+2010,Metals Processing,73,791,155
+2011,Metals Processing,71,766,144
+2012,Metals Processing,72,714,144
+2013,Metals Processing,73,662,144
+2014,Metals Processing,74,609,107
+2015,Metals Processing,74,609,107
+2016,Metals Processing,74,609,107
+2000,Petroleum & Related Industries,122,161,316
+2001,Petroleum & Related Industries,124,162,319
+2002,Petroleum & Related Industries,354,357,257
+2003,Petroleum & Related Industries,357,355,237
+2004,Petroleum & Related Industries,355,353,218
+2005,Petroleum & Related Industries,354,351,199
+2006,Petroleum & Related Industries,379,322,182
+2007,Petroleum & Related Industries,405,293,166
+2008,Petroleum & Related Industries,431,265,149
+2009,Petroleum & Related Industries,516,401,139
+2010,Petroleum & Related Industries,601,536,129
+2011,Petroleum & Related Industries,685,672,119
+2012,Petroleum & Related Industries,731,735,119
+2013,Petroleum & Related Industries,776,797,119
+2014,Petroleum & Related Industries,822,859,103
+2015,Petroleum & Related Industries,822,859,103
+2016,Petroleum & Related Industries,822,859,103
+2000,Other Industrial Processes,479,592,410
+2001,Other Industrial Processes,504,615,429
+2002,Other Industrial Processes,429,490,325
+2003,Other Industrial Processes,448,505,337
+2004,Other Industrial Processes,467,520,349
+2005,Other Industrial Processes,482,534,361
+2006,Other Industrial Processes,461,498,325
+2007,Other Industrial Processes,440,463,289
+2008,Other Industrial Processes,416,426,253
+2009,Other Industrial Processes,395,397,231
+2010,Other Industrial Processes,374,367,210
+2011,Other Industrial Processes,353,337,188
+2012,Other Industrial Processes,348,427,188
+2013,Other Industrial Processes,342,518,188
+2014,Other Industrial Processes,337,608,172
+2015,Other Industrial Processes,337,608,172
+2016,Other Industrial Processes,337,608,172
+2000,Solvent Untilization,4,51,1
+2001,Solvent Untilization,4,50,1
+2002,Solvent Untilization,7,2,0
+2003,Solvent Untilization,6,2,0
+2004,Solvent Untilization,5,2,0
+2005,Solvent Untilization,4,2,0
+2006,Solvent Untilization,5,4,0
+2007,Solvent Untilization,6,5,1
+2008,Solvent Untilization,6,7,1
+2009,Solvent Untilization,4,5,1
+2010,Solvent Untilization,3,4,0
+2011,Solvent Untilization,1,2,0
+2012,Solvent Untilization,1,2,0
+2013,Solvent Untilization,1,2,0
+2014,Solvent Untilization,1,2,0
+2015,Solvent Untilization,1,2,0
+2016,Solvent Untilization,1,2,0
+2000,Storage & Transport,15,169,6
+2001,Storage & Transport,16,178,7
+2002,Storage & Transport,19,118,5
+2003,Storage & Transport,18,114,4
+2004,Storage & Transport,17,111,3
+2005,Storage & Transport,16,107,3
+2006,Storage & Transport,14,78,4
+2007,Storage & Transport,12,48,5
+2008,Storage & Transport,10,18,6
+2009,Storage & Transport,13,21,7
+2010,Storage & Transport,16,24,8
+2011,Storage & Transport,20,27,9
+2012,Storage & Transport,15,21,9
+2013,Storage & Transport,11,16,9
+2014,Storage & Transport,6,10,3
+2015,Storage & Transport,6,10,3
+2016,Storage & Transport,6,10,3
+2000,Waste Disposal & Recycling,129,1849,34
+2001,Waste Disposal & Recycling,130,1851,35
+2002,Waste Disposal & Recycling,111,1594,26
+2003,Waste Disposal & Recycling,122,1581,27
+2004,Waste Disposal & Recycling,134,1568,28
+2005,Waste Disposal & Recycling,146,1554,28
+2006,Waste Disposal & Recycling,130,1495,26
+2007,Waste Disposal & Recycling,113,1437,24
+2008,Waste Disposal & Recycling,97,1378,21
+2009,Waste Disposal & Recycling,92,1289,20
+2010,Waste Disposal & Recycling,88,1200,18
+2011,Waste Disposal & Recycling,83,1111,17
+2012,Waste Disposal & Recycling,93,1459,17
+2013,Waste Disposal & Recycling,104,1808,17
+2014,Waste Disposal & Recycling,114,2156,37
+2015,Waste Disposal & Recycling,114,2156,37
+2016,Waste Disposal & Recycling,114,2156,37
+2000,Highway Vehicles,8394,68061,260
+2001,Highway Vehicles,7774,63476,248
+2002,Highway Vehicles,10337,51611,286
+2003,Highway Vehicles,9671,48683,248
+2004,Highway Vehicles,9004,45754,210
+2005,Highway Vehicles,8338,42826,172
+2006,Highway Vehicles,7992,40046,107
+2007,Highway Vehicles,7646,37266,42
+2008,Highway Vehicles,6941,33156,39
+2009,Highway Vehicles,6206,27437,36
+2010,Highway Vehicles,5701,28242,37
+2011,Highway Vehicles,5870,27355,29
+2012,Highway Vehicles,5470,25523,29
+2013,Highway Vehicles,5070,23690,29
+2014,Highway Vehicles,4670,21857,29
+2015,Highway Vehicles,4135,19853,24
+2016,Highway Vehicles,3606,17872,18
+2000,Off-Highway Vehicles,4167,24178,437
+2001,Off-Highway Vehicles,4156,24677,440
+2002,Off-Highway Vehicles,4864,22624,725
+2003,Off-Highway Vehicles,4667,22384,654
+2004,Off-Highway Vehicles,4471,22144,582
+2005,Off-Highway Vehicles,4275,21903,510
+2006,Off-Highway Vehicles,3898,20373,399
+2007,Off-Highway Vehicles,3521,18842,287
+2008,Off-Highway Vehicles,3485,17884,201
+2009,Off-Highway Vehicles,3391,15921,207
+2010,Off-Highway Vehicles,3315,15353,121
+2011,Off-Highway Vehicles,3081,14949,127
+2012,Off-Highway Vehicles,2987,14406,127
+2013,Off-Highway Vehicles,2893,13863,127
+2014,Off-Highway Vehicles,2799,13320,76
+2015,Off-Highway Vehicles,2607,13155,53
+2016,Off-Highway Vehicles,2415,12989,31
+2000,Miscellaneous,276,12964,70
+2001,Miscellaneous,184,8676,44
+2002,Miscellaneous,211,18493,135
+2003,Miscellaneous,178,19415,140
+2004,Miscellaneous,146,20336,145
+2005,Miscellaneous,271,15106,126
+2006,Miscellaneous,268,17111,130
+2007,Miscellaneous,265,19116,135
+2008,Miscellaneous,262,21121,139
+2009,Miscellaneous,278,21839,150
+2010,Miscellaneous,295,22558,161
+2011,Miscellaneous,399,23777,198
+2012,Miscellaneous,386,23184,198
+2013,Miscellaneous,372,22591,198
+2014,Miscellaneous,292,19624,149
+2015,Miscellaneous,292,19624,149
+2016,Miscellaneous,292,19624,149
+2000,Wildfires,263,12049,69
+2001,Wildfires,171,7744,44
+2002,Wildfires,114,14052,80
+2003,Wildfires,114,14052,80
+2004,Wildfires,114,14052,80
+2005,Wildfires,94,7900,56
+2006,Wildfires,94,7900,56
+2007,Wildfires,94,7900,56
+2008,Wildfires,96,12200,70
+2009,Wildfires,96,12200,70
+2010,Wildfires,96,12200,70
+2011,Wildfires,185,12701,96
+2012,Wildfires,185,12701,96
+2013,Wildfires,185,12701,96
+2014,Wildfires,118,10327,70
+2015,Wildfires,118,10327,70
+2016,Wildfires,118,10327,70

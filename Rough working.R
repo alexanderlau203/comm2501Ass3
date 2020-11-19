@@ -50,15 +50,22 @@ attach(mean_data)
 #  scale_x_discrete(breaks=years)
   
 # VISUALISATION 1
-#attach(country_data)
+attach(country_data)
+data = country_data %>%
+  rename(period=country_data.year_month, AQI = aqi)
 years = paste('20', formatC(seq(0,15,1), width=2, flag='0'), '-01', sep='')
-ggplot(country_data, mapping=aes(country_data.year_month, aqi, group=type, 
+plot = ggplot(data, mapping=aes(period, aqi, group=type, 
                                  color=type))+
   geom_smooth()+
-  geom_line(alpha=0.7)+
+  geom_line(alpha=0.7, aes(text=paste("period: ", period)))+
   ggtitle('Air Quality Index (AQI) of Common Pollutants in the US')+ 
   labs(y='AQI', x='Year', color='Pollutant')+
+  theme(axis.text.x = element_text(angle = 90))+
   scale_x_discrete(breaks=years)
+ggplotly(plot)
+
+write.csv(recent_data, "/Users/Alex/Documents/GitHub/comm2501Ass3/A3_Website/recent_data.csv")
+country_data = read.csv("countryData.csv")
 
 
 # VISUALISATION 2 - NO2 by state (2015)
@@ -80,16 +87,19 @@ pal <- colorNumeric(
   palette = "Green",
   domain = recent_data$no3)
 
+
 library("leaflet")
-recent_data %>%
+no2_chart = recent_data %>%
   leaflet() %>%
   addTiles() %>%
   addCircleMarkers(label = ~State,
-                   popup = ~paste(round(no2, 2), 'parts per billion'),
+                   popup = ~paste(round(no2, 2), 'parts per billion<br>AQI: ', round(no2_aqi)),
                    color = ~pal(no2),
+                   opacity = ~(no2_aqi/max(recent_data$no2_aqi)),
                    radius = ~no2,
                    lng = ~Long,
                    lat = ~Lat)
+save(no2_chart, file = "no2_map.RData")
 
 # VISUALISATION 3 - SO2 by state (2015)
 library(RColorBrewer)
@@ -179,16 +189,52 @@ leaflet() %>%
 
 
 # VISUALISATION 7 - NO2 by bar
-ggplot(data=recent_data)+
+plot = ggplot(data=recent_data)+
   geom_bar(aes(y=no2, x=reorder(State, -no2), fill=-no2_aqi), stat='identity')+
   theme(axis.text.x = element_text(angle = 90))+
-  ggtitle('NO2 by US State in 2016')+ 
-  labs(y='NO2 (Parts per billion)', x='State', color='NO2 AQI')+
+  ggtitle('NO2 by US State in 2015')+ 
+  labs(y='NO2 (Parts per billion)', x='State', color='NO2 AQI', fill="NO2 AQI")+
   scale_fill_gradient(low="darkgreen", high="palegreen1")
+ggplotly(plot)
+
+
+
+library(ggthemes)
+data = recent_data %>%
+  rename(NO2 = no2, AQI = no2_aqi)
+data$AQI = round(data$AQI, 2)
+data$NO2 = round(data$NO2, 2)
+plot = ggplot(data=data, aes(label=State))+
+  geom_point(aes(y=NO2, x=AQI))+
+  ggtitle('Average NO2 by US State in 2015')+ 
+  labs(y='NO2 (Parts per billion)', x='NO2 AQI')+
+  theme_economist()
+ggplotly(plot)
+
+  
+# Violin plot for NO2
+high_no2 = mean_data %>%
+  filter(State == 'Colorado' || State == 'Utah' || State == 'New York' ||
+         State == 'Wyoming') 
+
+ggplot(high_no2, aes(x=State, y=no2_aqi, fill=State))+ 
+  geom_violin()+
+  ggtitle('States with the Worst AQI in 2015')+ 
+  labs(y='AQI', x='State')
+
+high_o3 = mean_data %>%
+  filter(State == 'Nevada' || State == 'Arizona' || State == 'Utah' ||
+           State == 'Wyoming') 
+
+ggplot(high_o3, aes(x=State, y=o3_aqi, fill=State))+ 
+  geom_violin()+
+  ggtitle('States with the Worst AQI in 2015')+ 
+  labs(y='AQI', x='State')
+
 
 #VISUALISATION 8 - Pollutant by Industry
 library(plotly)
-by_industry = read.csv('/Users/Alex/Documents/GitHub/comm2501Ass3/NO2 By Industry.csv')
+by_industry = read.csv('/Users/Alex/Documents/GitHub/comm2501Ass3/Summary By Industry.csv')
 
 # create a dataset
 Year <- by_industry$Year
@@ -197,7 +243,20 @@ NO2 <- by_industry$no2
 data <- data.frame(Year,Source,NO2)
 
 # Grouped
-plot = ggplot(data, aes(fill=Source, y=NO2, x=Year)) + 
-  geom_bar(position="stack", stat="identity")+
+new_data = data %>%
+  filter(Year > 2006)
+plot = ggplot(new_data, aes(fill=Source, y=NO2, x=Year)) + 
+  geom_bar(position="dodge", stat="identity")+
   theme_bw()
 ggplotly(plot)
+
+write.csv(new_data, '/Users/Alex/Documents/GitHub/comm2501Ass3/byIndustry.csv')
+save(plot, file="dataByIndustry.RData")
+
+
+
+
+
+
+
+

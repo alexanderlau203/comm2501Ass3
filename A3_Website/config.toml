@@ -5,7 +5,7 @@ theme = "gohugo-theme-ananke"
 
 DefaultContentLanguage = "en"
 SectionPagesMenu = "main"
-Paginate = 3 # this is set low for demonstrating with dummy content. Set to a higher number
+Paginate = 10 # this is set low for demonstrating with dummy content. Set to a higher number
 googleAnalytics = ""
 enableRobotsTXT = true
 
@@ -31,5 +31,5 @@ enableRobotsTXT = true
   rss = ""
   # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
   background_color_class = "bg-dark-gray"
-  featured_image = "/images/gohugo-default-sample-hero-image.jpg"
+  featured_image = "./daphne-fecheyr-airpollution.jpg"
   recent_posts_number = 2

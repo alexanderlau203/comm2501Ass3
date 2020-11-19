@@ -1,0 +1,104 @@
+---
+title: Nitrogen Dioxide
+author: ''
+date: '2020-11-17'
+slug: []
+categories: []
+tags: []
+featured_image: '/post/2020-11-17-nitrogen-dioxide_files/jay-mantri-TFyi0QOx08c-unsplash.jpg'
+description: High levels of nitrogen dioxide (NO2) can increase susceptibility to lung infections, asthma triggers and airway inflammation in healthy people.
+---
+
+## NO2 Across the Nation
+In the most recent data set (2015), Colorado averaged the worst AQI at 36. It 
+was also followed by like New York and Utah both at approximately 29.8. 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+```{r, message=FALSE, include=FALSE}
+library("tidyverse")
+library("leaflet")
+library("RColorBrewer")
+library("ggthemes")
+library("plotly")
+recent_data = read.csv("../recent_data.csv")
+```
+
+```{r, echo=FALSE}
+data = recent_data %>%
+  rename(NO2 = no2, AQI = no2_aqi)
+data$AQI = round(data$AQI, 2)
+data$NO2 = round(data$NO2, 2)
+
+plot = ggplot(data=data, aes(label=State))+
+  geom_point(aes(y=NO2, x=AQI))+
+  ggtitle('Average NO2 by US State in 2015')+ 
+  labs(y='NO2 (Parts per billion)', x='NO2 AQI')+
+  theme_economist()
+ggplotly(plot)
+```
+
+Geographically, there appears to be two major concentrations of NO2. The first
+being near just East of Central America involving Colarado, Utah and Arizona.
+The second is locaetd on the East cost, involving more population dense areas
+like New York and New Jersey. In the interactive chart below, click on the 
+circles for the exact numbers for NO2 levels and AQI.
+ 
+```{r,  echo=FALSE}
+pal <- colorNumeric(
+  palette = "Greens",
+  domain = recent_data$no2_aqi)
+
+recent_data %>%
+  leaflet() %>%
+  addTiles() %>%
+  addCircleMarkers(label = ~State,
+                   popup = ~paste(round(no2, 2), 'parts per billion<br>AQI: ', 
+                                  round(no2_aqi, 2)),
+                   color = ~pal(no2_aqi),
+                   opacity = 0.8,
+                   radius = ~no2 * 1.5,
+                   lng = ~Long,
+                   lat = ~Lat) %>%
+  addLegend(pal = pal, 
+            values = recent_data$no2_aqi, 
+            position = "bottomright", 
+            title = "NO2 AQI")
+
+```
+
+Looking at the 4 worst states, the distribution of their daily NO2 AQI levels
+show some worrying results.
+
+![](/post/2020-11-17-nitrogen-dioxide_files/NO2_AQI_Worst_States.png)
+In Colorado, most of the AQI measurements are concentrated around 45-50, which
+puts that state at a 'moderate' health risk. In addition, Colorado, New Jersey 
+and New York all show significant peaks on certain days, which come close to
+the 'Unhealthy for sensitive groups' category (AQI of 100).
+
+## NO2 By Source
+Overall, transportation and stationary fuel combustion have reduced their
+NO2 emissions greatly, in part to technology and innovation. Both have been
+cut by a third between 2006 and 2015. However, emissions from industrial 
+processes have increased slightly by 
+
+```{r, include=FALSE}
+library("plotly")
+```
+
+```{r, echo=FALSE}
+
+data = read.csv('../byIndustry.csv')
+
+plot = ggplot(data, aes(fill=Source, y=NO2, x=Year)) + 
+  geom_bar(position="dodge", stat="identity")+
+  labs(y='NO2 (Parts per billion)', x='Year', color='Pollutant')+
+  ggtitle('Changes in NO2 Emissions By Source (2006 - 2015)')+ 
+  theme_bw()
+ggplotly(plot)
+```
+
+
+

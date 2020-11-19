@@ -50,5 +50,35 @@ ggplot(country_data, mapping=aes(country_data.year_month, aqi, group=type,
   theme(axis.text.x = element_text(angle = 90))+
   scale_x_discrete(breaks=years)
 
+# Import industry data
+by_industry = read.csv('/Users/Alex/Documents/GitHub/comm2501Ass3/Summary By Industry.csv')
+
+# Rearrange the data so that industries are attributes, not columns
+# create a dataset
+Year <- by_industry$Year
+Source <- by_industry$Source
+NO2 <- by_industry$no2
+SO2 <- by_industry$so2
+CO <- by_industry$co
+data <- data.frame(Year,Source,NO2, SO2, CO)
+
+ggplot(data=data, mapping=aes(y=NO2, x=Year, fill=Source))+
+  geom_histogram(stat='identity')
+
+
+
+# show trends in the air quality by month
+country_data = read.csv("/Users/Alex/Documents/GitHub/comm2501Ass3/countryData.csv")
+country_data = country_data %>%
+  separate(col='year_month', into=c('year', 'month'), sep='-')
+View(country_data)
+ggplot(country_data, mapping=aes(month, aqi, color=type))+
+  geom_point()+
+  facet_wrap(~type)
+
+
+
+
+
 
 
