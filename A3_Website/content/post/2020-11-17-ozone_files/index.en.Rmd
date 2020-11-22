@@ -38,7 +38,7 @@ data$O3 = round(data$O3, 4)
 plot = ggplot(data=data, aes(label=State))+
   geom_point(aes(y=O3, x=AQI))+
   ggtitle('Average O3 by US State in 2015')+ 
-  labs(y='O3 (Parts per billion)', x='O3 AQI')+
+  labs(y='O3 (Parts per million)', x='O3 AQI')+
   theme_economist()
 ggplotly(plot)
 ```
@@ -52,32 +52,41 @@ seems to be the exception to this trend.
 
 pal <- colorNumeric(
   palette = "Blues",
-  domain = recent_data$o3_aqi)
+  domain = recent_data$o3)
 
 recent_data %>%
   leaflet() %>%
   addTiles() %>%
   addCircleMarkers(label = ~State,
-                   popup = ~paste(round(o3, 4), 'parts per billion<br>AQI: ', 
-                                  round(o3_aqi)),
-                   color = ~pal(o3_aqi),
+                   popup = ~paste(round(o3, 4), 'parts per million<br>AQI: ', 
+                                  round(o3_aqi, 2)),
+                   color = ~pal(o3),
                    opacity = 0.8,
-                   radius = ~o3*500,
+                   radius = ~o3_aqi,
                    lng = ~Long,
                    lat = ~Lat) %>%
   addLegend(pal = pal, 
-            values = recent_data$o3_aqi, 
+            values = recent_data$o3, 
             position = "bottomright", 
-            title = "O3 AQI")
+            title = "O3 (ppm)")
 
 ```
 
 Examining the four worst states also shows alarmingly high AQI peaks.
 
-![](/post/2020-11-17-ozone_files/O3_AQI_Worst_States.png)
-While the majority of readings stay under 50, peaks in Utah have 
-surpassed approach the 'Unhealthy' category, in which some members of the
-general public may experience health effects.
+```{r, echo=FALSE}
+high_o3 = read.csv("highO3.csv")
+plot = ggplot(high_o3, aes(x=State, y=o3_aqi, fill=State))+ 
+  geom_boxplot()+
+  ggtitle('States with the Worst AQI in 2015')+ 
+  labs(y='AQI', x='State')
+ggplotly(plot)
+```
+
+While the majority of readings stay under 50, there are several peaks in the 
+moderate category. Meanwhile, peaks in Utah have approach the 'Unhealthy' 
+category, in which some members of the general public may experience health 
+effects.
 
 ## O3 By Source 
 

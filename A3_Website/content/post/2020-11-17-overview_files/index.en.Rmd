@@ -14,9 +14,13 @@ regulations, economic shifts and other technological innovations. However, air
 quality constantly fluctuates and can pose health risks to people who are 
 sensitive to air pollution, such as the elderly.  
 
-The Air Quality Index (AQI) is a measure of air quality. An AQI over 50 is
-considered to moderate health threat, however, the EPA has aimed for even lower
-targets, which are specified in the [NAAQS Table](https://www.epa.gov/criteria-air-pollutants/naaqs-table).
+The Air Quality Index (AQI) is a measure of air quality that is used in our data
+set.
+
+![](/post/2020-11-17-overview_files/Air-Quality-Policy-Table.jpg)
+
+
+The EPA has also set some general guidelines for pollutant levels in the [NAAQS Table](https://www.epa.gov/criteria-air-pollutants/naaqs-table).
 Below, four major pollutant trends have been summarised for the US as a whole:
 
 ![](/post/2020-11-17-overview_files/AQI_Overview.png)
@@ -32,7 +36,7 @@ In the case of ozone, we see dramatic oscillations, which has a large standard
 deviation of 10.24, peaking during cold periods. CO, SO2 and NO2 have the 
 inverse relationship and peak around warmer periods.
 
-Also note that some data from the following states are missing:
+Also note that some data from the following states are missing:  
 - Montana  
 - Idaho   
 - South Carolina  

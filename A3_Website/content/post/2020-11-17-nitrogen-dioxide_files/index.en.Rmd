@@ -49,7 +49,7 @@ circles for the exact numbers for NO2 levels and AQI.
 ```{r,  echo=FALSE}
 pal <- colorNumeric(
   palette = "Greens",
-  domain = recent_data$no2_aqi)
+  domain = recent_data$no2)
 
 recent_data %>%
   leaflet() %>%
@@ -57,22 +57,31 @@ recent_data %>%
   addCircleMarkers(label = ~State,
                    popup = ~paste(round(no2, 2), 'parts per billion<br>AQI: ', 
                                   round(no2_aqi, 2)),
-                   color = ~pal(no2_aqi),
+                   color = ~pal(no2),
                    opacity = 0.8,
-                   radius = ~no2 * 1.5,
+                   radius = ~no2_aqi,
                    lng = ~Long,
                    lat = ~Lat) %>%
   addLegend(pal = pal, 
-            values = recent_data$no2_aqi, 
+            values = recent_data$no2, 
             position = "bottomright", 
-            title = "NO2 AQI")
+            title = "NO2 (ppb)")
 
 ```
 
 Looking at the 4 worst states, the distribution of their daily NO2 AQI levels
 show some worrying results.
 
-![](/post/2020-11-17-nitrogen-dioxide_files/NO2_AQI_Worst_States.png)
+```{r, echo=FALSE}
+high_no2 = read.csv("highNo2.csv")
+plot = ggplot(high_no2, aes(x=State, y=no2_aqi, fill=State))+ 
+  geom_boxplot()+
+  ggtitle('States with the Worst AQI in 2015')+ 
+  labs(y='AQI', x='State')
+ggplotly(plot)
+```
+
+
 In Colorado, most of the AQI measurements are concentrated around 45-50, which
 puts that state at a 'moderate' health risk. In addition, Colorado, New Jersey 
 and New York all show significant peaks on certain days, which come close to
@@ -84,9 +93,6 @@ NO2 emissions greatly, in part to technology and innovation. Both have been
 cut by a third between 2006 and 2015. However, emissions from industrial 
 processes have increased slightly by 
 
-```{r, include=FALSE}
-library("plotly")
-```
 
 ```{r, echo=FALSE}
 

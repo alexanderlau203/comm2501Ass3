@@ -215,22 +215,62 @@ ggplotly(plot)
 # Violin plot for NO2
 high_no2 = mean_data %>%
   filter(State == 'Colorado' || State == 'Utah' || State == 'New York' ||
-         State == 'Wyoming') 
+         State == 'Wyoming') %>%
+  filter(grepl("2015-", Date.Local, fixed = TRUE))
 
-ggplot(high_no2, aes(x=State, y=no2_aqi, fill=State))+ 
-  geom_violin()+
+plot = ggplot(high_no2, aes(x=State, y=no2_aqi, fill=State))+ 
+  geom_boxplot()+
   ggtitle('States with the Worst AQI in 2015')+ 
   labs(y='AQI', x='State')
+ggplotly(plot)
+write.csv(high_no2, "/Users/Alex/Documents/GitHub/comm2501Ass3/A3_Website/content/post/highNo2.csv")
+
+
+write.csv(mean_data, "meanData.csv")
 
 high_o3 = mean_data %>%
   filter(State == 'Nevada' || State == 'Arizona' || State == 'Utah' ||
-           State == 'Wyoming') 
+           State == 'Wyoming') %>%
+  filter(grepl("2015-", Date.Local, fixed = TRUE))
 
-ggplot(high_o3, aes(x=State, y=o3_aqi, fill=State))+ 
-  geom_violin()+
+
+plot = ggplot(high_o3, aes(x=State, y=o3_aqi, fill=State))+ 
+  geom_boxplot()+
   ggtitle('States with the Worst AQI in 2015')+ 
   labs(y='AQI', x='State')
+write.csv(high_o3, "/Users/Alex/Documents/GitHub/comm2501Ass3/A3_Website/content/post/highO3.csv")
 
+
+high_co = mean_data %>%
+  filter(State == 'Florida' || State == 'Alaska' || State == 'Colorado' ||
+           State == 'Arizona') %>%
+  filter(grepl("2015-", Date.Local, fixed = TRUE))
+
+plot = ggplot(high_co, aes(x=State, y=co_aqi, fill=State))+ 
+  geom_boxplot()+
+  ggtitle('States with the Worst AQI in 2015')+ 
+  labs(y='AQI', x='State')
+ggplotly(plot)
+write.csv(high_no2, "/Users/Alex/Documents/GitHub/comm2501Ass3/A3_Website/content/post/highCO.csv")
+
+
+high_so2 = mean_data %>%
+  filter(State == 'Alaska' || State == 'Ohio' || State == 'Kansas' ||
+           State == 'Indiana') %>%
+  filter(grepl("2015-", Date.Local, fixed = TRUE))
+
+plot = ggplot(high_so2, aes(x=State, y=so2_aqi, fill=State))+ 
+  geom_boxplot()+
+  ggtitle('States with the Worst AQI in 2015')+ 
+  labs(y='AQI', x='State')
+ggplotly(plot)
+write.csv(high_so2, "/Users/Alex/Documents/GitHub/comm2501Ass3/A3_Website/content/post/highSo2.csv")
+
+
+
+mean_data %>% 
+  group_by(State) %>%
+  
 
 #VISUALISATION 8 - Pollutant by Industry
 library(plotly)
@@ -240,7 +280,9 @@ by_industry = read.csv('/Users/Alex/Documents/GitHub/comm2501Ass3/Summary By Ind
 Year <- by_industry$Year
 Source <- by_industry$Source
 NO2 <- by_industry$no2
-data <- data.frame(Year,Source,NO2)
+SO2 <- by_industry$so2
+CO <- by_industry$co
+data <- data.frame(Year,Source,NO2, SO2, CO)
 
 # Grouped
 new_data = data %>%
