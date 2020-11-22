@@ -8,6 +8,7 @@ tags: []
 featured_image: '/post/2020-11-17-nitrogen-dioxide_files/jay-mantri-TFyi0QOx08c-unsplash.jpg'
 description: High levels of nitrogen dioxide (NO2) can increase susceptibility to lung infections, asthma triggers and airway inflammation in healthy people.
 ---
+[<<< Back: Air Quality Overview](/post/2020-11-17-overview_files) 
 
 ## NO2 Across the Nation
 In the most recent data set (2015), Colorado averaged the worst AQI at 36. It 

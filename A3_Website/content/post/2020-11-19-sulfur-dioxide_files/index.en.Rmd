@@ -8,6 +8,7 @@ tags: []
 featured_image: '/post/2020-11-19-sulfur-dioxide_files/gena-okami-e0Km1pqqj-Y-unsplash.jpg'
 description: 'Sulfur dioxide (SO2) can irritate skin, eyes, nose throat and lungs. In more severe cases, irritation of the respiratory system can occur, causing breathing difficulties.'
 ---
+[<<< Back: Carbon Monoxide](/post/2020-11-19-carbon-monoxide_files)  
 
 ## SO2 Across the Nation
 
@@ -103,3 +104,4 @@ plot = ggplot(data, aes(fill=Source, y=SO2, x=Year)) +
 ggplotly(plot)
 ```
 
+[>>> Next: Postlude](/post/2020-11-22-postlude_files)  

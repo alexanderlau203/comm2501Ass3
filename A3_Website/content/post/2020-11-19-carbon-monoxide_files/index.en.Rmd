@@ -8,6 +8,7 @@ tags: []
 featured_image: '/post/2020-11-19-carbon-monoxide_files/harsh-jadav-ybw0y8C6clo-unsplash.jpg'
 description: 'Carbon monoxide (CO) is an odourless, colourless gas which is responsible for headaches, nausea, fatigue and chest pain. In high concentrations the gas can potentially impair vision and cause birth defects.'
 ---
+[<<< Back: Ozone](/post/2020-11-17-ozone_files)  
 
 ## CO Across the Nation
 
@@ -100,4 +101,5 @@ plot = ggplot(data, aes(fill=Source, y=CO, x=Year)) +
 ggplotly(plot)
 ```
 
-[>>> Next: Sulfur Dioxide](/post/2020-11-19-sulfur-dioxide_files)
+[>>> Next: Sulfur Dioxide](/post/2020-11-19-sulfur-dioxide_files)  
+
