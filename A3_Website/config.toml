@@ -1,5 +1,5 @@
 title = "Lau Analytics"
-baseURL = "https://usairpollutionanalytics.com"
+baseURL = "/"
 languageCode = "en-us"
 theme = "gohugo-theme-ananke"
 

@@ -1,0 +1,98 @@
+---
+title: Ozone
+author: ''
+date: '2020-11-17'
+slug: []
+categories: []
+tags: []
+featured_image: '/post/2020-11-17-ozone_files/zbynek-burival-8iZG31eXkks-unsplash.jpg'
+description: 'While ozone in the stratosphere protects humans from UV light, ground-level ozone can cause chest pain, coughing, throat irritation and congestion.'
+---
+[<<< Back: Nitrogen Dioxide](/post/2020-11-17-nitrogen-dioxide_files)  
+
+## O3 Across the Nation
+
+Ozone is the only air pollutant that has not improved between 2000 and 2015.
+This is reflected in our most recent data set, which shows the average ozone
+AQI level reaching over 40 in 8 states. 
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+```{r, message=FALSE, include=FALSE}
+library("tidyverse")
+library("leaflet")
+library("RColorBrewer")
+library("ggthemes")
+library("plotly")
+recent_data = read.csv("../recent_data.csv")
+```
+
+```{r, echo=FALSE}
+data = recent_data %>%
+  rename(O3 = o3, AQI = o3_aqi)
+data$AQI = round(data$AQI, 2)
+data$O3 = round(data$O3, 4)
+
+plot = ggplot(data=data, aes(label=State))+
+  geom_point(aes(y=O3, x=AQI), colour="royalblue4")+
+  ggtitle('Average O3 by US State in 2015')+ 
+  labs(y='O3 (Parts per million)', x='O3 AQI')+
+  theme_economist()
+ggplotly(plot)
+```
+
+Similar to NO2, the ozone seems to be concentrated on near Utah and the
+surrounding states, as well as the major East Coast cities. Tenesee, however,
+seems to be the exception to this trend.
+
+
+```{r, echo=FALSE}
+
+pal <- colorNumeric(
+  palette = "Blues",
+  domain = recent_data$o3)
+
+recent_data %>%
+  leaflet() %>%
+  addTiles() %>%
+  addCircleMarkers(label = ~State,
+                   popup = ~paste(round(o3, 4), 'parts per million<br>AQI: ', 
+                                  round(o3_aqi, 2)),
+                   color = ~pal(o3),
+                   opacity = 0.8,
+                   radius = ~o3_aqi,
+                   lng = ~Long,
+                   lat = ~Lat) %>%
+  addLegend(pal = pal, 
+            values = recent_data$o3, 
+            position = "bottomright", 
+            title = "O3 (ppm)")
+
+```
+
+Examining the four worst states also shows alarmingly high AQI peaks.
+
+```{r, echo=FALSE}
+high_o3 = read.csv("highO3.csv")
+plot = ggplot(high_o3, aes(x=State, y=o3_aqi, fill=State))+ 
+  geom_boxplot()+
+  ggtitle('States with the Worst AQI in 2015')+ 
+  labs(y='AQI', x='State')
+ggplotly(plot)
+```
+
+While the majority of readings stay under 50, there are several peaks in the 
+moderate category. Meanwhile, peaks in Utah have approach the 'Unhealthy' 
+category, in which some members of the general public may experience health 
+effects.
+
+## O3 By Source 
+
+The data set does not include O3 by source as O3 is not directly produced
+by humans. Rather, nitrous oxides and volatile organic compounds produced
+by humans react together to create O3.
+
+[>>> Next: Carbon Monoxide](/post/2020-11-19-carbon-monoxide_files)   

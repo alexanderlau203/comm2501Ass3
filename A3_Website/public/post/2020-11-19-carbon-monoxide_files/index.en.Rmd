@@ -1,0 +1,105 @@
+---
+title: Carbon Monoxide
+author: ''
+date: '2020-11-19'
+slug: []
+categories: []
+tags: []
+featured_image: '/post/2020-11-19-carbon-monoxide_files/harsh-jadav-ybw0y8C6clo-unsplash.jpg'
+description: 'Carbon monoxide (CO) is an odourless, colourless gas which is responsible for headaches, nausea, fatigue and chest pain. In high concentrations the gas can potentially impair vision and cause birth defects.'
+---
+[<<< Back: Ozone](/post/2020-11-17-ozone_files)  
+
+## CO Across the Nation
+
+Across the nation, CO AQI level are actually quite low, due to improving 
+technologies that have enabled more efficient combustion. In the graph below, 
+not all the AQI levels were below 7 in 2015, with the mean around 4.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+```{r, message=FALSE, include=FALSE}
+library("tidyverse")
+library("leaflet")
+library("RColorBrewer")
+library("ggthemes")
+library("plotly")
+recent_data = read.csv("../recent_data.csv")
+```
+
+```{r, echo=FALSE}
+data = recent_data %>%
+  rename(CO = co, AQI = co_aqi)
+data$AQI = round(data$AQI, 2)
+data$CO = round(data$CO, 4)
+
+plot = ggplot(data=data, aes(label=State))+
+  geom_point(aes(y=CO, x=AQI), colour="orangered3")+
+  ggtitle('Average CO by US State in 2015')+ 
+  labs(y='CO (Parts per million)', x='CO AQI')+
+  theme_economist()
+ggplotly(plot)
+```
+
+
+Looking at the distribution across the country, Colorado, Arizona and Utah
+once again have the highest pollution AQI levels. This time, Florida and Alaska
+stand out as the other states with high AQI.
+
+```{r, echo=FALSE}
+
+pal <- colorNumeric(
+  palette = "Reds",
+  domain = recent_data$co)
+
+recent_data %>%
+  leaflet() %>%
+  addTiles() %>%
+  addCircleMarkers(label = ~State,
+                   popup = ~paste(round(co, 4), 'parts per million<br>AQI: ', 
+                                  round(co_aqi, 2)),
+                   color = ~pal(co),
+                   opacity = 0.8,
+                   radius = ~co_aqi,
+                   lng = ~Long,
+                   lat = ~Lat) %>%
+  addLegend(pal = pal, 
+            values = recent_data$co, 
+            position = "bottomright", 
+            title = "CO (ppm)")
+
+```
+
+
+The distribution of daily AQI averages is also commendable. The majority of 
+AQI values stay below 20 and even the highest peak in Florida does not go above
+50, which is considered the 'moderate' classification.
+
+```{r, echo=FALSE}
+high_co = read.csv("highCO.csv")
+plot = ggplot(high_co, aes(x=State, y=co_aqi, fill=State))+ 
+  geom_boxplot()+
+  ggtitle('States with the Worst AQI in 2015')+ 
+  labs(y='AQI', x='State')
+ggplotly(plot)
+```
+
+## CO by Source   
+Again, we see that the transportation sector has seen the biggest decrease of
+approximately 23100 ppm, mostly due to better technology allowing more efficient
+combustion in vehicles.
+
+```{r, echo=FALSE}
+data = read.csv('../byIndustry.csv')
+plot = ggplot(data, aes(fill=Source, y=CO, x=Year)) + 
+  geom_bar(position="dodge", stat="identity")+
+  labs(y='CO (Parts per million)', x='Year', color='Pollutant')+
+  ggtitle('Changes in NO2 Emissions By Source (2006 - 2015)')+ 
+  theme_bw()
+ggplotly(plot)
+```
+
+[>>> Next: Sulfur Dioxide](/post/2020-11-19-sulfur-dioxide_files)  
+

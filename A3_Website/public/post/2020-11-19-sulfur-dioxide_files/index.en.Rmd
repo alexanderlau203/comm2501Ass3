@@ -1,0 +1,107 @@
+---
+title: Sulfur Dioxide
+author: ''
+date: '2020-11-19'
+slug: []
+categories: []
+tags: []
+featured_image: '/post/2020-11-19-sulfur-dioxide_files/gena-okami-e0Km1pqqj-Y-unsplash.jpg'
+description: 'Sulfur dioxide (SO2) can irritate skin, eyes, nose throat and lungs. In more severe cases, irritation of the respiratory system can occur, causing breathing difficulties.'
+---
+[<<< Back: Carbon Monoxide](/post/2020-11-19-carbon-monoxide_files)  
+
+## SO2 Across the Nation
+
+SO2 levels in the US are also very restrained, with 95% of the participating 
+states below an AQI of 10 and the majority clustered below 5.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+```{r, message=FALSE, include=FALSE}
+library("tidyverse")
+library("leaflet")
+library("RColorBrewer")
+library("ggthemes")
+library("plotly")
+recent_data = read.csv("../recent_data.csv")
+```
+
+```{r, echo=FALSE}
+data = recent_data %>%
+  rename(SO2 = so2, AQI = so2_aqi)
+data$AQI = round(data$AQI, 2)
+data$SO2 = round(data$SO2, 4)
+
+plot = ggplot(data=data, aes(label=State))+
+  geom_point(aes(y=SO2, x=AQI), colour="purple3")+
+  ggtitle('Average SO2 by US State in 2015')+ 
+  labs(y='SO2 (Parts per billion)', x='SO2 AQI')+
+  theme_economist()
+ggplotly(plot)
+
+
+
+```
+
+The distribution of SO2 across the country doesn't seem to yield a particular
+geographical pattern, only showing concentrations in Alaska and Ohio.
+
+```{r, echo=FALSE}
+
+pal <- colorNumeric(
+  palette = "Purples",
+  domain = c(-5, 7))
+
+recent_data %>%
+  leaflet() %>%
+  addTiles() %>%
+  addCircleMarkers(label = ~State,
+                   popup = ~paste(round(so2, 4), 'parts per billion<br>AQI: ', 
+                                  round(so2_aqi, 2)),
+                   color = ~pal(so2),
+                   opacity = 0.8,
+                   radius = ~so2_aqi,
+                   lng = ~Long,
+                   lat = ~Lat) %>%
+  addLegend(pal = pal, 
+            values = recent_data$so2, 
+            position = "bottomright", 
+            title = "SO2 (ppb)")
+
+```
+
+The distribution of concentrations is also fairly healthy. Even in the highest
+producing SO2 states, there are only a few days in the year where the SO2 AQI
+levels reach over 50. The only minor concern being Indiana, with quite a few
+high AQI outliers.
+
+```{r, echo=FALSE}
+high_so2 = read.csv("highSo2.csv")
+
+plot = ggplot(high_so2, aes(x=State, y=so2_aqi, fill=State))+ 
+  geom_boxplot()+
+  ggtitle('States with the Worst AQI in 2015')+ 
+  labs(y='AQI', x='State')
+ggplotly(plot)
+```
+
+
+## SO2 By Source
+In the graph below, the greatest source of SO2 production comes from stationary
+fuel combustion. However, from 2006-2015, this has drastically
+improved, decreasing to almost a third of its original emissions output. The
+remaining sources have remained the fairly stable and low over this period.
+```{r, echo=FALSE}
+
+data = read.csv('../byIndustry.csv')
+plot = ggplot(data, aes(fill=Source, y=SO2, x=Year)) + 
+  geom_bar(position="dodge", stat="identity")+
+  labs(y='SO2 (Parts per billion)', x='Year', color='Pollutant')+
+  ggtitle('Changes in SO2 Emissions By Source (2006 - 2015)')+ 
+  theme_bw()
+ggplotly(plot)
+```
+
+[>>> Next: Postlude](/post/2020-11-22-postlude_files)  

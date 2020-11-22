@@ -1,0 +1,70 @@
+---
+title: National Air Quality Overview
+author: Alexander Lau
+date: '2020-11-20'
+slug: []
+categories: []
+tags: []
+featured_image: 'post/2020-11-17-overview_files/macau-photo-agency-1UJMEmi3-qw-unsplash.jpg'
+description: ''
+---
+
+[<<< Back: About](/about)  
+
+Overall, air pollutants have been declining from the 2000s as due to better 
+regulations, economic shifts and other technological innovations. However, air
+quality constantly fluctuates and can pose health risks to people who are 
+sensitive to air pollution, such as the elderly.  
+
+The Air Quality Index (AQI) is a measure of air quality that is used in our data
+set.
+
+![](/post/2020-11-17-overview_files/Air-Quality-Policy-Table.jpg)
+
+
+The EPA has also set some general guidelines for pollutant levels in the [NAAQS Table](https://www.epa.gov/criteria-air-pollutants/naaqs-table).
+Below, four major pollutant trends have been summarised for the US as a whole:
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+```{r, message=FALSE, include=FALSE}
+library(ggplot2)
+library(plotly)
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+data = read.csv("overview_data.csv")
+years = paste('20', formatC(seq(0,15,1), width=2, flag='0'), '-01', sep='')
+plot = ggplot(data, mapping=aes(period, AQI, group=type, 
+                                 color=type))+
+  geom_smooth()+
+  geom_line(alpha=0.7)+
+  ggtitle('Air Quality Index (AQI) of Common Pollutants in the US')+ 
+  labs(y='AQI', x='Year', color='Pollutant')+
+  theme(axis.text.x = element_text(angle = 90))+
+  scale_x_discrete(breaks=years)
+ggplotly(plot, tooltip=c("period", "AQI"))
+```
+
+The declines for NO2, SO2 and CO AQIs are promising, declining by approximately
+15, 10 and 5 points respectively. However, ground-level ozone has largely 
+remained the same around 38. While the graph shows a promising picture for the 
+US overall, it's limitations lie in showing short-term peaks. However, the
+line component of the graph shows mid-term peaks and troughs occurring due to
+change in temperature that each season brings.
+
+In the case of ozone, we see dramatic oscillations, which has a large standard
+deviation of 10.24, peaking during cold periods. CO, SO2 and NO2 have the 
+inverse relationship and peak around warmer periods.
+
+Also note that some data from the following states are missing:  
+- Montana  
+- Idaho   
+- South Carolina  
+- West Virginia  
+- Nebraska
+
+[>>> Next: Nitrogen Dioxide](/post/2020-11-17-nitrogen-dioxide_files)
+

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Future Air: US Air Pollution Analytics on Lau Analytics</title>
+    <link>/</link>
+    <description>Recent content in Future Air: US Air Pollution Analytics on Lau Analytics</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>National Air Quality Overview</title>
+      <link>/post/2020-11-17-overview_files/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2020-11-17-overview_files/</guid>
+      <description>&amp;lt;&amp;lt;&amp;lt; Back: About
+Overall, air pollutants have been declining from the 2000s as due to better regulations, economic shifts and other technological innovations. However, air quality constantly fluctuates and can pose health risks to people who are sensitive to air pollution, such as the elderly.
+The Air Quality Index (AQI) is a measure of air quality that is used in our data set.</description>
+    </item>
+    
+    <item>
+      <title>Carbon Monoxide</title>
+      <link>/post/2020-11-19-carbon-monoxide_files/</link>
+      <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2020-11-19-carbon-monoxide_files/</guid>
+      <description>&amp;lt;&amp;lt;&amp;lt; Back: Ozone
+CO Across the Nation Across the nation, CO AQI level are actually quite low, due to improving technologies that have enabled more efficient combustion. In the graph below, not all the AQI levels were below 7 in 2015, with the mean around 4.
+ {&#34;x&#34;:{&#34;data&#34;:[{&#34;x&#34;:[3.93,6.27,6.19,4.25,5.31,6.52,3.15,4.28,6.47,5.13,4.74,4.5,4.23,2.93,4.61,4.23,3.25,3.36,3.21,4.11,3.92,4.07,4.29,2.2,4.5,3.63,4.3,4.11,2.08,4.15,4.01,4.76,2.76,3.37,2.62,1.94,3.4,5.87,4.14,2.67,0.83],&#34;y&#34;:[0.221,0.4054,0.3643,0.306,0.3304,0.388,0.2191,0.3015,0.5141,0.3138,0.3861,0.3013,0.2487,0.2102,0.2857,0.2707,0.2207,0.248,0.2148,0.2737,0.2825,0.2695,0.2682,0.1839,0.2848,0.2295,0.2633,0.2585,0.1718,0.2694,0.236,0.2752,0.1742,0.2316,0.1945,0.1673,0.2063,0.3603,0.28,0.2035,0.0534],&#34;text&#34;:[&#34;AQI: 3.93
+CO: 0.2210
+State: Alabama&#34;,&#34;AQI: 6.27
+CO: 0.4054
+State: Alaska&#34;,&#34;AQI: 6.</description>
+    </item>
+    
+    <item>
+      <title>Sulfur Dioxide</title>
+      <link>/post/2020-11-19-sulfur-dioxide_files/</link>
+      <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2020-11-19-sulfur-dioxide_files/</guid>
+      <description>&amp;lt;&amp;lt;&amp;lt; Back: Carbon Monoxide
+SO2 Across the Nation SO2 levels in the US are also very restrained, with 95% of the participating states below an AQI of 10 and the majority clustered below 5.
+ {&#34;x&#34;:{&#34;data&#34;:[{&#34;x&#34;:[6.95,14.79,1.68,2.37,1.24,4.94,0.73,2.36,0.46,0.36,3.04,4.2,7.2,1.09,8.61,2.36,3.06,1.59,2.73,1.19,0.76,5.61,0.85,0.97,1.12,1.05,2.53,0.65,0.11,13.5,1.49,0.94,6.07,0.74,0.33,0.15,1.16,0.7,1.21,1.83,2.12],&#34;y&#34;:[1.0094,6.1732,0.5926,1.1102,0.4567,1.0297,0.3923,0.7504,0.0351,0.255,1.0559,1.2222,1.2623,0.4572,1.5373,0.5518,1.0729,0.8707,0.8938,0.7164,0.7046,1.3924,0.3939,0.8291,0.2941,0.6866,1.0116,0.2687,0.1218,2.239,0.7739,0.4663,1.3417,0.333,0.3686,0.1019,0.253,0.2511,0.47,0.8137,0.2813],&#34;text&#34;:[&#34;AQI: 6.95
+SO2: 1.0094
+State: Alabama&#34;,&#34;AQI: 14.79
+SO2: 6.1732
+State: Alaska&#34;,&#34;AQI: 1.68
+SO2: 0.5926
+State: Arizona&#34;,&#34;AQI: 2.37
+SO2: 1.1102
+State: Arkansas&#34;,&#34;AQI: 1.24
+SO2: 0.</description>
+    </item>
+    
+    <item>
+      <title>Nitrogen Dioxide</title>
+      <link>/post/2020-11-17-nitrogen-dioxide_files/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2020-11-17-nitrogen-dioxide_files/</guid>
+      <description>&amp;lt;&amp;lt;&amp;lt; Back: Air Quality Overview
+NO2 Across the Nation In the most recent data set (2015), Colorado averaged the worst AQI at 36. It was also followed by like New York and Utah both at approximately 29.8.
+ {&#34;x&#34;:{&#34;data&#34;:[{&#34;x&#34;:[20.03,18.68,26.6,19.42,18.79,35.51,16.15,19.02,9.62,20.93,8.58,18.3,23.5,13.61,22.9,18.53,18.56,13.81,14.47,24.55,14.75,22.54,25.22,6.38,27.25,22.66,29.86,15.25,9.88,23.77,16.99,16.75,15.09,15.54,9.7,1.07,18,29.81,13.97,20.98,10.29],&#34;y&#34;:[9.08,11.15,13.11,8.61,10.17,19.96,8.31,10.11,4.11,9.67,3.53,8.52,13.49,6.46,11.01,7.88,9.38,5.02,7.46,14.4,6.6,13.11,13.35,3.32,15.04,11.18,17.22,6.93,4.3,12.48,7.57,9.19,6.94,7.64,4.72,0.78,9.16,16.98,6.89,9.67,3.4],&#34;text&#34;:[&#34;AQI: 20.03
+NO2: 9.08
+State: Alabama&#34;,&#34;AQI: 18.68
+NO2: 11.15
+State: Alaska&#34;,&#34;AQI: 26.60
+NO2: 13.11
+State: Arizona&#34;,&#34;AQI: 19.42
+NO2: 8.61
+State: Arkansas&#34;</description>
+    </item>
+    
+    <item>
+      <title>Ozone</title>
+      <link>/post/2020-11-17-ozone_files/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2020-11-17-ozone_files/</guid>
+      <description>&amp;lt;&amp;lt;&amp;lt; Back: Nitrogen Dioxide
+O3 Across the Nation Ozone is the only air pollutant that has not improved between 2000 and 2015. This is reflected in our most recent data set, which shows the average ozone AQI level reaching over 40 in 8 states.
+ {&#34;x&#34;:{&#34;data&#34;:[{&#34;x&#34;:[37.34,19.14,43.97,33.46,41.28,38.53,39.43,42.04,34.08,33.48,26.55,35.32,37.11,33.29,34.39,39.95,33.97,29.49,39.12,28.62,33.27,27.4,44.17,36.13,35.59,40.52,33.71,38.82,30.56,32.71,38.24,28.15,37.49,37.71,29.37,42.26,36.61,43.06,36.36,28.08,42.89],&#34;y&#34;:[0.024,0.0142,0.0274,0.0243,0.0277,0.0246,0.0304,0.0283,0.0257,0.0192,0.0235,0.025,0.0262,0.0264,0.0254,0.0237,0.0235,0.0248,0.0283,0.0225,0.026,0.0207,0.031,0.03,0.0243,0.0298,0.0237,0.0269,0.0247,0.0241,0.0265,0.0197,0.0277,0.0292,0.0239,0.0376,0.0248,0.0277,0.0267,0.0215,0.0365],&#34;text&#34;:[&#34;AQI: 37.34
+O3: 0.0240
+State: Alabama&#34;,&#34;AQI: 19.14
+O3: 0.0142
+State: Alaska&#34;,&#34;AQI: 43.97
+O3: 0.</description>
+    </item>
+    
+    <item>
+      <title>Postlude</title>
+      <link>/post/2020-11-22-postlude_files/</link>
+      <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2020-11-22-postlude_files/</guid>
+      <description>Though the air pollution levels in America are improving with each year, there is still work to be done! Some O3, NO2 and CO levels still spike high enough to pose a threat to the community.
+For policy makers and government officials, the insights should provide enough information on the ‘where’ and ‘how’ concerning air pollution trends, in hope for action and cleaner air. For everyday citizens (American or otherwise), hopefully you’ve learnt a little bit more about pollution.</description>
+    </item>
+    
+  </channel>
+</rss>
