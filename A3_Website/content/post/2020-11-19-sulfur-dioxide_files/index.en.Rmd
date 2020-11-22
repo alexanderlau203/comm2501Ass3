@@ -34,7 +34,7 @@ data$AQI = round(data$AQI, 2)
 data$SO2 = round(data$SO2, 4)
 
 plot = ggplot(data=data, aes(label=State))+
-  geom_point(aes(y=SO2, x=AQI))+
+  geom_point(aes(y=SO2, x=AQI), colour="purple3")+
   ggtitle('Average SO2 by US State in 2015')+ 
   labs(y='SO2 (Parts per billion)', x='SO2 AQI')+
   theme_economist()

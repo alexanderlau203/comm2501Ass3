@@ -36,7 +36,7 @@ data$AQI = round(data$AQI, 2)
 data$O3 = round(data$O3, 4)
 
 plot = ggplot(data=data, aes(label=State))+
-  geom_point(aes(y=O3, x=AQI))+
+  geom_point(aes(y=O3, x=AQI), colour="royalblue4")+
   ggtitle('Average O3 by US State in 2015')+ 
   labs(y='O3 (Parts per million)', x='O3 AQI')+
   theme_economist()
@@ -93,3 +93,5 @@ effects.
 The data set does not include O3 by source as O3 is not directly produced
 by humans. Rather, nitrous oxides and volatile organic compounds produced
 by humans react together to create O3.
+
+[>>> Next: Carbon Monoxide](/post/2020-11-19-carbon-monoxide_files)

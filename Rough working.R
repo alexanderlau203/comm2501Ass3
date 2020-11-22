@@ -51,20 +51,21 @@ attach(mean_data)
   
 # VISUALISATION 1
 attach(country_data)
+country_data$aqi = round(as.numeric(country_data$aqi),2)
 data = country_data %>%
   rename(period=country_data.year_month, AQI = aqi)
 years = paste('20', formatC(seq(0,15,1), width=2, flag='0'), '-01', sep='')
-plot = ggplot(data, mapping=aes(period, aqi, group=type, 
+plot = ggplot(data, mapping=aes(period, AQI, group=type, 
                                  color=type))+
   geom_smooth()+
-  geom_line(alpha=0.7, aes(text=paste("period: ", period)))+
+  geom_line(alpha=0.7)+
   ggtitle('Air Quality Index (AQI) of Common Pollutants in the US')+ 
   labs(y='AQI', x='Year', color='Pollutant')+
   theme(axis.text.x = element_text(angle = 90))+
   scale_x_discrete(breaks=years)
-ggplotly(plot)
+ggplotly(plot, tooltip=c("period", "AQI"))
 
-write.csv(recent_data, "/Users/Alex/Documents/GitHub/comm2501Ass3/A3_Website/recent_data.csv")
+write.csv(data, "/Users/Alex/Documents/GitHub/comm2501Ass3/A3_Website/overview_data.csv")
 country_data = read.csv("countryData.csv")
 
 
@@ -238,6 +239,7 @@ plot = ggplot(high_o3, aes(x=State, y=o3_aqi, fill=State))+
   geom_boxplot()+
   ggtitle('States with the Worst AQI in 2015')+ 
   labs(y='AQI', x='State')
+View(high_o3)
 write.csv(high_o3, "/Users/Alex/Documents/GitHub/comm2501Ass3/A3_Website/content/post/highO3.csv")
 
 

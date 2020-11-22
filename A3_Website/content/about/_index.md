@@ -3,10 +3,9 @@ description: "\"There's so much pollution in the air now that if it weren't for
 our lungs, there'd be no place to put it all.\" -Robert Orben"
  
 
-featured_image: ""
+featured_image: "/about/corina-rainer-jZc5eTXnYLU-unsplash.jpg"
 title: About
 ---
-{{< figure src="./fred-rivett-PP_i3rBa8CU-unsplash.jpg">}}
 
 Recent studies have shown that air pollution is linked with mortality rates. 
 While air pollution in the US has been steadily improving over the last decade,
@@ -24,3 +23,5 @@ Environmental Protection Agency (EPA).
 But Future Air also serves another purpose, by giving us the opportunity to 
 inform American citizens about air polluting activities. Our aim is to
 inspire action, given a better awareness of air pollutants and their dangers.
+
+[\>\>\> Next: Air Quality Overview](/post/2020-11-17-overview_files)

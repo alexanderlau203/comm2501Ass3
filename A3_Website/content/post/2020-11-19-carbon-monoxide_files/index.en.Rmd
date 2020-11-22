@@ -35,7 +35,7 @@ data$AQI = round(data$AQI, 2)
 data$CO = round(data$CO, 4)
 
 plot = ggplot(data=data, aes(label=State))+
-  geom_point(aes(y=CO, x=AQI))+
+  geom_point(aes(y=CO, x=AQI), colour="orangered3")+
   ggtitle('Average CO by US State in 2015')+ 
   labs(y='CO (Parts per million)', x='CO AQI')+
   theme_economist()
@@ -91,7 +91,6 @@ approximately 23100 ppm, mostly due to better technology allowing more efficient
 combustion in vehicles.
 
 ```{r, echo=FALSE}
-
 data = read.csv('../byIndustry.csv')
 plot = ggplot(data, aes(fill=Source, y=CO, x=Year)) + 
   geom_bar(position="dodge", stat="identity")+
@@ -100,3 +99,5 @@ plot = ggplot(data, aes(fill=Source, y=CO, x=Year)) +
   theme_bw()
 ggplotly(plot)
 ```
+
+[>>> Next: Sulfur Dioxide](/post/2020-11-19-sulfur-dioxide_files)

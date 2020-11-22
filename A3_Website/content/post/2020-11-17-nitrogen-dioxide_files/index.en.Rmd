@@ -33,7 +33,7 @@ data$AQI = round(data$AQI, 2)
 data$NO2 = round(data$NO2, 2)
 
 plot = ggplot(data=data, aes(label=State))+
-  geom_point(aes(y=NO2, x=AQI))+
+  geom_point(aes(y=NO2, x=AQI), colour="palegreen4")+
   ggtitle('Average NO2 by US State in 2015')+ 
   labs(y='NO2 (Parts per billion)', x='NO2 AQI')+
   theme_economist()
@@ -91,12 +91,13 @@ the 'Unhealthy for sensitive groups' category (AQI of 100).
 Overall, transportation and stationary fuel combustion have reduced their
 NO2 emissions greatly, in part to technology and innovation. Both have been
 cut by a third between 2006 and 2015. However, emissions from industrial 
-processes have increased slightly by 
+processes have increased slightly by 300 ppb.
 
 
 ```{r, echo=FALSE}
 
 data = read.csv('../byIndustry.csv')
+data$NO2 = round(data$NO2, 2)
 
 plot = ggplot(data, aes(fill=Source, y=NO2, x=Year)) + 
   geom_bar(position="dodge", stat="identity")+
@@ -106,5 +107,5 @@ plot = ggplot(data, aes(fill=Source, y=NO2, x=Year)) +
 ggplotly(plot)
 ```
 
-
+[>>> Next: Ozone](/post/2020-11-17-ozone_files)
 

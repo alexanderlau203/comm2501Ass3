@@ -11,4 +11,4 @@ almost 150 000 people could lose their lives from poor air quality in the next
 10 years, if air quality remains the same.*  
 
 Explore our range of data visualisations to learn more about air pollution in 
-the US.
+the US. Start your journey in the About page.
